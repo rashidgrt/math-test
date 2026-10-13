@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Mathematics Tests Dashboard – AEO Gujrat-7 (2025-26)</title>
+<style>
+:root{--bg:#f6f4f8;--card:#fff;--tx:#241a2b;--mu:#6f6578;--ac:#5b2a5e;--bd:#e2dce6;--ok:#2d7a4b;--or:#b25b00;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#17121a;--card:#221b27;--tx:#f0e9f3;--mu:#a99db2;--ac:#c58bc9;--bd:#3a3043;--ok:#6fcf97;--or:#f0a35a}}
+:root[data-theme="dark"]{--bg:#17121a;--card:#221b27;--tx:#f0e9f3;--mu:#a99db2;--ac:#c58bc9;--bd:#3a3043;--ok:#6fcf97;--or:#f0a35a}
+*{box-sizing:border-box}html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--tx);font:15px/1.4 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+header{padding:18px 16px 6px;max-width:960px;margin:auto}
+h1{font-size:21px;margin:0;color:var(--ac)}header p{margin:4px 0 0;color:var(--mu);font-size:13px}
+.tot{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+.tot span{background:var(--card);border:1px solid var(--bd);border-radius:99px;padding:3px 11px;font-size:12px;color:var(--mu)}
+.tot b{color:var(--tx)}
+main{max-width:960px;margin:auto;padding:10px 16px 40px;display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:12px}
+a.c{display:block;background:var(--card);border:1px solid var(--bd);border-radius:14px;padding:14px;text-decoration:none;color:inherit;transition:transform .12s,border-color .12s}
+a.c:hover,a.c:focus-visible{transform:translateY(-2px);border-color:var(--ac);outline:none}
+.cl{font-size:12px;color:var(--mu);text-transform:uppercase;letter-spacing:.06em}
+.num{font-size:44px;font-weight:700;line-height:1;color:var(--ac);margin:2px 0 6px}
+.sub{font-size:13px;color:var(--mu);margin-bottom:10px}
+.tg{display:flex;flex-wrap:wrap;gap:5px}
+.tg i{font-style:normal;font-size:11px;padding:1px 8px;border-radius:99px;border:1px solid var(--bd);color:var(--mu)}
+.tg i.rv{color:var(--or);border-color:var(--or)}.tg i.mo{background:var(--ac);border-color:var(--ac);color:#fff}.tg i.re{color:var(--ok);border-color:var(--ok)}
+.go{margin-top:12px;font-weight:600;color:var(--ac);font-size:14px}
+footer{max-width:960px;margin:auto;padding:0 16px 30px;color:var(--mu);font-size:12px}
+</style></head><body>
+<header><h1>📐 Mathematics Tests – Classes 2 to 8</h1><p>AEO Gujrat-7 · Session 2025-26 · tap a class to open its tests (filters, view and A4 print)</p><div class="tot" id="tot"></div></header>
+<main id="g"></main>
+<footer>Each class opens in its own page. Every class page has Month, Week, Day, Test type and Exercise filters, and prints one test per A4 page or the original landscape sheet.</footer>
+<script>
+const C=[{"g": 2, "n": 144, "ex": 95, "rw": 25, "rv": 24, "mo": 0, "u": "class-2.html"}, {"g": 3, "n": 137, "ex": 84, "rw": 24, "rv": 24, "mo": 5, "u": "class-3.html"}, {"g": 4, "n": 140, "ex": 89, "rw": 24, "rv": 22, "mo": 5, "u": "class-4.html"}, {"g": 5, "n": 144, "ex": 87, "rw": 32, "rv": 19, "mo": 6, "u": "class-5.html"}, {"g": 6, "n": 136, "ex": 82, "rw": 27, "rv": 27, "mo": 0, "u": "class-6.html"}, {"g": 7, "n": 138, "ex": 89, "rw": 20, "rv": 29, "mo": 0, "u": "class-7.html"}, {"g": 8, "n": 144, "ex": 101, "rw": 13, "rv": 24, "mo": 6, "u": "class-8.html"}];
+const tot=C.reduce((a,c)=>a+c.n,0);
+document.getElementById('tot').innerHTML=`<span><b>${C.length}</b> classes</span><span><b>${tot}</b> tests</span><span><b>${C.reduce((a,c)=>a+(c.rv||0),0)}</b> revision</span><span><b>${C.reduce((a,c)=>a+(c.mo||0),0)}</b> monthly</span>`;
+document.getElementById('g').innerHTML=C.map(c=>`<a class="c" href="${c.u}"><div class="cl">Class</div><div class="num">${c.g}</div><div class="sub">${c.n} tests · 6 months</div><div class="tg"><i>${c.ex} exercise</i><i class="re">${c.rw} review</i><i class="rv">${c.rv} revision</i>${c.mo?`<i class="mo">${c.mo} monthly</i>`:''}</div><div class="go">Open Class ${c.g} tests →</div></a>`).join('');
+</script></body></html>
